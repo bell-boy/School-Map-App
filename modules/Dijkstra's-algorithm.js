@@ -157,3 +157,5 @@ graph.addEdge("D", "F", 1);
 graph.addEdge("E", "F", 1);
 
 console.log(graph.Dijkstra("A", "E"));
+
+export { WeightedGraph, Node, PriorityQueue }
