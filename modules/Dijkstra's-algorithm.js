@@ -1,4 +1,3 @@
-import {elkins} from "../schools/elkins";
 //Dijkstra algorithm is used to find the shortest distance between two nodes inside a valid weighted graph. Often used in Google Maps, Network Router etc.
 
 //helper class for PriorityQueue
@@ -135,7 +134,4 @@ class WeightedGraph {
     return path.concat(smallest).reverse();
   }
 }
-
-console.log(elkins.Dijkstra("100", "200"));
-
 export { WeightedGraph, Node, PriorityQueue }

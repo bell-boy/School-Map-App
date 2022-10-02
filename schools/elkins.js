@@ -17,5 +17,4 @@ elkins.addEdge("400", "500", 3);
 elkins.addEdge("400", "600", 1);
 elkins.addEdge("500", "600", 1);
 elkins.addEdge("500","700", 5);
-
-export { elkins }
+export {elkins}

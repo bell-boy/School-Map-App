@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Button, DeviceEventEmitter } from 'react-native';
 import { useState, useEffect } from 'react';
-import {WeightedGraph} from "../modules/Dijkstra's-algorithm";
 import {elkins} from "../schools/elkins";
+import { WeightedGraph } from '../modules/Dijkstra\'s-algorithm';
 
 const range = [0, 1, 2, 3, 4, 5, 6]
 
@@ -44,7 +44,7 @@ export default function ScheduleScreen({ route })
             title="Submit"
             onPress={() =>
             {
-                for (let i = 0; i < 6; i++)
+                for(let i = 0; i<6; i++)
                     console.log(elkins.Dijkstra(schedule[i], schedule[i+1]))
             }}
         />
