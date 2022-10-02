@@ -1,7 +1,9 @@
 import { StyleSheet, Text, View, TextInput, Button, DeviceEventEmitter } from 'react-native';
 import { useState, useEffect } from 'react';
+import {WeightedGraph} from "../modules/Dijkstra's-algorithm";
+import {elkins} from "../schools/elkins";
 
-const range = [0, 1, 2, 3, 4, 5]
+const range = [0, 1, 2, 3, 4, 5, 6]
 
 function PeriodInput({index, setText, text})
 {
@@ -11,7 +13,7 @@ function PeriodInput({index, setText, text})
                 style={styles.periodInput}
                 onChangeText={(newVal) => setText(index, newVal)}
                 value={text}
-                placeholder={"001"}
+                placeholder={"000"}
                 keyboardType="numeric"
                 onFocus={() => setText(index, "")}
             />
@@ -28,7 +30,7 @@ export default function ScheduleScreen({ route })
     function adjust(index, newvalue)
     {
         const newArray = []
-        for (let i = 0; i < 6; i++)
+        for (let i = 0; i < 7; i++)
             newArray.push(index == i ? newvalue:schedule[i])
         DeviceEventEmitter.emit('event.setSchedule', newArray);
     }
@@ -38,7 +40,14 @@ export default function ScheduleScreen({ route })
     return <View style={styles.container}>
         <Text style={styles.inputTitle}>Period</Text>
         {range.map((index) => <PeriodInput text={schedule[index]} setText={adjust} key={index} index={index}/>)}
-        <Button title="Submit"/>
+        <Button 
+            title="Submit"
+            onPress={() =>
+            {
+                for (let i = 0; i < 6; i++)
+                    console.log(elkins.Dijkstra(schedule[i], schedule[i+1]))
+            }}
+        />
     </View>
 }
 
