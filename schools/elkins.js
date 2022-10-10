@@ -1,4 +1,4 @@
-import {WeightedGraph} from "/Users/sunda/.vscode/SchoolMapApp/modules/Dijkstra's-algorithm";
+import {WeightedGraph} from "../modules/Dijkstra's-algorithm.js";
 var elkins = new WeightedGraph();
 elkins.addVertex("100");
 elkins.addVertex("200");
